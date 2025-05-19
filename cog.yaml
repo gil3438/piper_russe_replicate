@@ -1,0 +1,21 @@
+build:
+  # Version de Python à utiliser
+  python_version: "3.9"
+
+  # Paquets Python à installer avec pip
+  python_packages:
+    - "piper-tts"
+    - "pydub" # <<< NOUVEAU : Pour la conversion en MP3
+
+    # Ajoutez ici d'autres paquets Python si votre predict.py en a besoin, 
+
+    # - "numpy"
+
+  # Paquets système à installer (sur Debian/Ubuntu)
+  # Piper peut avoir besoin de 'espeak-ng' pour la phonémisation de
+  system_packages: 
+    - "espeak-ng"
+    - "ffmpeg" # Si vous aviez besoin de manipuler l'audio plus tar
+# Indique à Cog où trouver votre classe Predictor pour faire des
+# Le format est "nom_du_fichier.py:NomDeLaClasse"
+predict: "predict.py:Predictor"
