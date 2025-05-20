@@ -65,7 +65,7 @@ class Predictor(BasePredictor):
 
                 print(f"  Initialisation de PiperVoice pour '{voice_id}'...")
                 try:
-                    voice_instance = PiperVoice(config_path=config_path, model_path=model_path)
+                    voice_instance = PiperVoice(config_path, model_path)
                     self.voices[voice_id] = voice_instance
                     # Vérifiez le type de l'attribut config APRÈS l'initialisation de PiperVoice
                     if hasattr(voice_instance, 'config'):
